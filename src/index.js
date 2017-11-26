@@ -128,25 +128,36 @@ function loadUserPict(userName) {
       </div>`);
   });
 }
+
 $(() => {
-  const userName = user3;
+  const userName = user1;
   $('#root')
     .append(navbar)
     .append(footer);
   loadUserData(userName);
   loadUserPict(userName);
-});
-
-
-/*
-$('#pictures a').mouseover((e) => {
+  $('#primary-nav ul li').click((e) => {
+    $('#root')
+      .empty()
+      .append(navbar)
+      .append(footer);
     const { target } = e;
-    const id = target.getAttribute('data-id');
-    $(`.${id}`).css('display', 'block');
-  })
-    .mouseout((e) => {
-      const { target } = e;
-      const id = target.getAttribute('data-id');
-      $(`.${id}`).css('display', 'none');
-    });
-*/
+    const user = target.getAttribute('id');
+    if (user === 'user2') {
+      const users = user2;
+      loadUserData(users);
+      loadUserPict(users);
+    } else if (user === 'user3') {
+      const users = user3;
+      loadUserData(users);
+      loadUserPict(users);
+    } else if (user === 'user4') {
+      const users = user4;
+      loadUserData(users);
+      loadUserPict(users);
+    } else if (user === 'user1') {
+      loadUserData(user1);
+      loadUserPict(user1);
+    }
+  });
+});

@@ -173,8 +173,9 @@ ul{
 footer {
   background-color:#f8f9fa;
   border-top: 1px solid rgba(0, 0, 0, .0975);
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
+  top: calc(100vh - 25px);
   height: 25px;
 }
